@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Quản Lý Kho</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/bootstrap.css?v=mcRMpWht4i" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/HoldOn.min.css?v=bESXUQZr1v" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/microtip.css?v=tQwTJOxO2" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/fSelect.css?v=DMbaWkk4Q1" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/tailwind.css?v=19H8m23pck" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/all.css?v=6H4x1zBMF" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/all(1).css" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/fontawesome.min.css?v=axh1yJ5Wuk" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/animate.min.css?v=PsixDlXwIR" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/fancybox.css?v=gctGghdUjl" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/mmenu.css?v=VsnWToIpXL" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/login.css?v=AOyqjcityW" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/slick.css?v=IYxd7509Ul" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/slick-theme.css?v=zxMm4ErFvH" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/slick-style.css?v=ZhvJDwy9d4" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/fotorama.css?v=hee68InsAQ" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/fotorama-style.css?v=a6NGqPSaTS" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/jquery.datetimepicker.css?v=PhooH7kIC9" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/owl.carousel.css?v=bUtu3w0xrW" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/owl.theme.default.css?v=zu2YlTp1W" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/style.css?v=TMDIWtwIAw" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/responsive.css?v=iLQKCzfqV" rel="stylesheet">
+</head>
+<body class="page-index ">
+    <div class="site-wrap">
+        <div class="header hidden lg:block">
+            <div class="container flex justify-center lg:justify-between items-center">
+                <a href="" class="logo shiner flex justify-center items-center">
+                    <img src="~/Areas/Staff/Scripts/Layout/LayoutStaff/bdstranquangthang23t2-2109-1669.png" alt="">
+                </a>
+
+                <div class="header-btn">
+                    <ul class="list-unstyled topnav-menu float-right mb-0">
+                        <li class="dropdown notification-list">
+                            <a id="drmnclick" class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+
+                                <img src="~/Areas/Staff//Images/Avatars/OIP.jpg" alt="" style="height : 50px;width : 50px">
+                                <span class="pro-user-name ml-1">
+                                    @*@if (Session["TaiKhoanNguoiDung"] != null)
+                                        {
+                                            <span>@Session["TenNguoiDung"]</span>
+
+                                        }*@
+                                    <span>Nhân Viên</span>
+
+                                </span>
+                            </a>
+                            <div class="dropdown-menu " id="dropmenu">
+                                <!-- item-->
+                                <a href="@Url.Action("ThongTinCaNhan","NguoiDung")" class="notify-item">
+                                    <span>Thông Tin Cá Nhân</span>
+                                </a>
+                                <a href="@Url.Action("DoiMatKhau","NguoiDung")" class="notify-item">
+                                    <span>Đổi Mật Khẩu</span>
+                                </a>
+                                <!-- item-->
+                                <div class="dropdown-divider"></div>
+
+                                <!-- item-->
+                                <a href="@Url.Action("DangXuat","NguoiDung")" class=" notify-item">
+                                    <span>Đăng Xuất</span>
+                                </a>
+
+                            </div>
+                        </li>
+                    </ul>
+                    @*<div class="list-unstyled">
+                            <a rel="nofollow" href="@Url.Action("Login","User")">
+                                <img src="~/Areas/Staff/Scripts/Layout/LayoutStaff/uicon-user-add.png" alt="">
+                                Đăng nhập
+                            </a>
+                        </div>
+                        <div class="list-unstyled">
+                            <a rel="nofollow" href="@Url.Action("SignUp","User")">
+                                <img src="~/Areas/Staff/Scripts/Layout/LayoutStaff/uicon-sign-in-alt.png" alt="">
+                                Đăng ký
+                            </a>
+                        </div>*@
+                </div>
+            </div>
+        </div><div class="menu_desktop menu hidden lg:block">
+            <div class="container flex justify-between">
+                <nav>
+                    <ul class="flex justify-between w-100">
+                        <li>
+                            <a class=""
+                               href="@Url.Action("TrangChu","TrangChu")" title="Trang chủ">
+                                Trang chủ
+                            </a>
+                        </li>
+                        <li>
+                            <a class=""
+                               href="@Url.Action("QuanLyPhieuNhapKho","TrangChu")"
+                               title="Quản Lý Phiếu Nhập Kho">
+                                Quản Lý Phiếu Nhập Kho
+                            </a>
+                        </li>
+                        <li>
+                            <a class=""
+                               href="@Url.Action("QuanLyPhieuXuatKho","TrangChu")"
+                               title="Quản Lý Phiếu Xuất Kho">
+                                Quản Lý Phiếu Xuất Kho
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="wrap-main wrap-home w-clear">
+            @RenderBody()
+            @*<div class="footer">
+                <div class="footer-bottom">
+                    <div class="container">
+                    </div>
+                </div>
+                <div class="copyright block">
+                    <div class="container">
+                    </div>
+                </div>
+            </div>*@
+        </div>
+    </div>
+    <script>
+        var drmnShow = 'dropdown-menu dropdown-menu-right profile-dropdown show';
+        var drmnHide = 'dropdown-menu dropdown-menu-right profile-dropdown';
+        var drmncheck = 0;
+
+        document.getElementById("drmnclick").onclick = function () {
+            if (drmncheck == 0) {
+                document.getElementById("dropmenu").classList = drmnShow;
+                drmncheck = 1;
+            }
+            else {
+                document.getElementById("dropmenu").classList = drmnHide;
+                drmncheck = 0;
+            }
+        };
+    </script>
+</body>
+</html>

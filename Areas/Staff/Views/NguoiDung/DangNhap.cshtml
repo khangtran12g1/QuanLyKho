@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Quản Lý Kho</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/bootstrap.css?v=mcRMpWht4i" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/HoldOn.min.css?v=bESXUQZr1v" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/microtip.css?v=tQwTJOxO2" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/fSelect.css?v=DMbaWkk4Q1" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/tailwind.css?v=19H8m23pck" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/all.css?v=6H4x1zBMF" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/all(1).css" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/fontawesome.min.css?v=axh1yJ5Wuk" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/animate.min.css?v=PsixDlXwIR" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/fancybox.css?v=gctGghdUjl" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/mmenu.css?v=VsnWToIpXL" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/login.css?v=AOyqjcityW" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/slick.css?v=IYxd7509Ul" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/slick-theme.css?v=zxMm4ErFvH" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/slick-style.css?v=ZhvJDwy9d4" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/fotorama.css?v=hee68InsAQ" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/fotorama-style.css?v=a6NGqPSaTS" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/jquery.datetimepicker.css?v=PhooH7kIC9" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/owl.carousel.css?v=bUtu3w0xrW" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/owl.theme.default.css?v=zu2YlTp1W" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/style.css?v=TMDIWtwIAw" rel="stylesheet">
+    <link href="~/Areas/Staff/Scripts/Layout/LayoutStaff/responsive.css?v=iLQKCzfqV" rel="stylesheet">
+</head>
+<body>
+    <div class="wrap-main wrap-home w-clear" style="margin-top : 50px">
+        <div class="account_modal_form">
+            <div class="account_modal_form1 text-left pb-3">
+                <h4>ĐĂNG NHẬP</h4>
+                <form class="form-user validation-user" novalidate method="post" enctype="multipart/form-data">
+                    <div style="height:20px;"><i style="color:red;">@ViewBag.Thongbao</i></div>
+                    <div class="mb-3">
+                        <div style="height:20px;"><i style="color:red;">@ViewData["Loi1"]</i></div>
+                        <input placeholder="Tài Khoản" class="form-control" type="text" name="name" id="name" maxlength="30">
+                    </div>
+                    <div class="mb-3">
+                        <div style="height:20px;"><i style="color:red;">@ViewData["Loi2"]</i></div>
+                        <input placeholder="Mật khẩu" class="form-control" id="password" type="password" maxlength="30" name="password">
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-lg w-100" name="submit" id="submit" value="Đăng nhập">
+                </form>
+            </div>
+            <div class="account_modal_form1 text-center pt-0 d-flex justify-content-between">
+                <!-- <div class="mb-4 text-center">BẠN CHƯA CÓ TÀI KHOẢN? ĐĂNG KÝ NGAY!</div> -->
+                <a class="account_modal_form1_link" href="@Url.Action("QuenMatKhau","NguoiDung")">Bạn quên mật khẩu?</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

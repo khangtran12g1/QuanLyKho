@@ -1,0 +1,235 @@
+﻿@*@{ if (Session["TaiKhoanQuanTri"] == null)
+    {
+        Response.Redirect("~/User/Login");
+    }
+}*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
+    <meta content="Coderthemes" name="author">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- App favicon -->
+    <link href="~/Areas/Admin/Scripts/Layout/LayoutAdmin/css/regular.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Scripts/Layout/LayoutAdmin/css/all.min.css" rel="stylesheet" />
+
+    <!-- plugin css -->
+    <link href="~/Areas/Admin/Scripts/Layout/LayoutAdmin/js/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
+
+    <!-- App css -->
+    <link href="~/Areas/Admin/Scripts/Layout/LayoutAdmin/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Scripts/Layout/LayoutAdmin/css/icons.min.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Scripts/Layout/LayoutAdmin/css/css-1.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Scripts/Layout/LayoutAdmin/css/css-2.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Scripts/Layout/LayoutAdmin/css/app.min.css" rel="stylesheet" />
+
+</head>
+
+
+<body>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Topbar Start -->
+        <div class="navbar-custom">
+            <ul class="list-unstyled topnav-menu float-right mb-0">
+                <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+
+                        <img src="~/Areas/Admin/Images/Avatars/ad-1.jpg" class="rounded-circle">
+                        <span class="pro-user-name ml-1">
+                            @*@if (Session["TaiKhoanQuanTri"] != null)
+                            {
+                                <span>@Session["TenQuanTri"]</span>
+
+                            }*@
+
+                            <span>Quản Trị Viên</span>
+
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                        <!-- item-->
+                        <a href="@Url.Action("ThongTinCaNhan","NguoiDung",new { Area = "Admin" })" class="dropdown-item notify-item">
+                            <span>Thông Tin Cá Nhân</span>
+                        </a>
+                        <a href="@Url.Action("DoiMatKhau","NguoiDung",new { Area = "Admin" })" class="dropdown-item notify-item">
+                            <span>Đổi Mật Khẩu</span>
+                        </a>
+                        <!-- item-->
+                        <div class="dropdown-divider"></div>
+
+                        <!-- item-->
+                        <a href="@Url.Action("DangXuat","NguoiDung",new { Area = "Admin" })" class="dropdown-item notify-item">
+                            <span>Đăng Xuất</span>
+                        </a>
+
+                    </div>
+                </li>
+            </ul>
+
+            <!-- LOGO -->
+            <div class="logo-box">
+                <a href="@Url.Action("QuanLyTKAdmin","TrangChu",new { Area = "Admin" })" class="logo text-center">
+                    <span class="logo-lg">
+
+                        <img src="~/Areas/Admin/Scripts/Layout/LayoutAdmin/icons/QLD-removebg-preview.png" height="50" width="150" />
+                        <!-- <span class="logo-lg-text-light">Upvex</span> -->
+                    </span>
+                    <span class="logo-sm">
+                        <!-- <span class="logo-sm-text-dark">X</span> -->
+                        <img src="~/Areas/Admin/Scripts/Layout/LayoutAdmin/icons/logo-sm.png" alt="" height="28">
+                    </span>
+                </a>
+            </div>
+
+        </div>
+        <!-- end Topbar -->
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+
+            <div class="slimscroll-menu">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+
+                    <ul class="metismenu" id="side-menu">
+
+                        <li class="menu-title">Menu</li>
+
+                        <li>
+                            <a href="@Url.Action("QuanLyTKAdmin","TrangChu",new { Area = "Admin" })">
+                                <i class="la"></i>
+                                <span class="badge badge-info badge-pill float-right"></span>
+                                <span> Tài Khoản Quản Trị Viên </span>
+                            </a>
+
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("QuanLyNhanVien","NhanVien",new { Area = "Admin" })">
+                                <i class="la"></i>
+                                <span class="badge badge-info badge-pill float-right"></span>
+                                <span> Nhân Viên </span>
+
+                            </a>
+
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("QuanLyNhaCungCap","NhaCungCap",new { Area = "Admin" })">
+                                <i class="la"></i>
+                                <span class="badge badge-info badge-pill float-right"></span>
+                                <span> Nhà Cung Cấp </span>
+                            </a>
+
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("QuanLyKhachHang","KhachHang",new { Area = "Admin" })">
+                                <i class="la"></i>
+                                <span class="badge badge-info badge-pill float-right"></span>
+                                <span> Khách Hàng </span>
+
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="@Url.Action("QuanLySanPham","SanPham",new { Area = "Admin" })">
+                                <i class="la"></i>
+                                <span class="badge badge-info badge-pill float-right"></span>
+                                <span> Sản Phẩm </span>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="@Url.Action("QuanLyPhieuNhapKho","PhieuNhapKho",new { Area = "Admin" })">
+                                <i class="la"></i>
+                                <span class="badge badge-info badge-pill float-right"></span>
+                                <span> Phiếu Nhập Kho </span>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="@Url.Action("QuanLyPhieuXuatKho","PhieuXuatKho",new { Area = "Admin" })">
+                                <i class="la"></i>
+                                <span class="badge badge-info badge-pill float-right"></span>
+                                <span> Phiếu Xuất Kho </span>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="@Url.Action("QuanLyKho","Kho",new { Area = "Admin" })">
+                                <i class="la"></i>
+                                <span class="badge badge-info badge-pill float-right"></span>
+                                <span> Kho </span>
+                            </a>
+
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- End Sidebar -->
+
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+                    @RenderBody()
+
+                </div> <!-- container -->
+
+            </div> <!-- content -->
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            2019 &copy; QLDHouse.VN theme by <a href="https://www.facebook.com/profile.php?id=61550632937380">Tiến Quý</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+
+    </div>
+    <!-- END wrapper -->
+    <!-- Third Party js-->
+    <script src="~/Areas/Admin/Scripts/Layout/LayoutAdmin/js/jquery-jvectormap-us-merc-en.js"></script>
+
+    <script src="~/Areas/Admin/Scripts/Layout/LayoutAdmin/js/vector-maps.init.js"></script>
+    <script src="~/Areas/Admin/Scripts/Layout/LayoutAdmin/js/peity.init.js"></script>
+    <script src="~/Areas/Admin/Scripts/Layout/LayoutAdmin/js/apexcharts.init.js"></script>
+    <!-- Dashboard init -->
+
+    <script src="~/Areas/Admin/Scripts/Layout/LayoutAdmin/js/vendor.min.js"></script>
+    <!-- App js -->
+
+    <script src="~/Areas/Admin/Scripts/Layout/LayoutAdmin/js/app.min.js"></script>
+
+
+</body>
+</html>

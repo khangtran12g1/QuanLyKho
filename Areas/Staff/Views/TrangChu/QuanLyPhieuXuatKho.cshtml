@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "QuanLyPhieuXuatKho";
+    Layout = "~/Areas/Staff/Views/Shared/_LayoutStaff.cshtml";
+}
+
+<div class="wrap-main  w-clear">
+    <div class="box_layout padding-box">
+        <div class="title-main"><span>Quản Lý Phiếu Xuất Kho</span></div>
+        <div class="box_layout baidang_layout">
+            <div class="baidang-slide">
+                <div class="nhadatnoibat_wrap_itemOne item_knbat">
+                    <div class="nhadatnoibat_wrap_itemOnePictures">
+                    </div>
+                    <div class="nhadatnoibat_wrap_itemOneInfo">
+                        <div class="nhadatnoibat_wrap_itemOneInfoTitle">
+                            <a href="@Url.Action("ChiTietPhieuXuatKho","PhieuXuatKho", new { id = 0 })">Mã : 00000000</a>
+                        </div>
+                        <div class="d-nhandat-info">
+                            <div class="nhadatnoibat_wrap_itemOneInfo21 text-primary text-price">
+                                <span>Chưa Duyệt</span>
+                            </div>
+                            <div class="nhadatnoibat_wrap_itemOneInfo21">
+                                3 sản phẩm
+                            </div>
+                        </div>
+                        <div class="nhadatnb-user">
+                            <div class="d-flex align-items-center">
+                                <a href="@Url.Action("CapNhatPhieuXuatKho","PhieuXuatKho", new { id = 0 })" class="btn btn-primary mr-2">Cập Nhật</a>
+                                <a href="@Url.Action("ThuHoiPhieuXuatKho","PhieuXuatKho", new { id = 0 })" class="btn btn-primary ml-2">Thu Hồi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

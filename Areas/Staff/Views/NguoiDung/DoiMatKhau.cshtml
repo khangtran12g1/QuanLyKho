@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "DoiMatKhau";
+    Layout = "~/Areas/Staff/Views/Shared/_LayoutStaff.cshtml";
+}
+
+<div class="wrap-main  w-clear">
+    <div class="box_layout padding-box">
+        <div class="title-main"><span>Đổi Mật Khẩu</span></div>
+        <div class="content-main mt-10 w-clear">
+            <div class="nhadatnoibat_wrap_itemOne item_knbat">
+                Nhập Thông Tin
+            </div>
+            <form method="post">
+                <div class="mt-2 mb-3 d-flex justify-content-center">
+                    <input type="submit" class="btn btn-primary mr-2" name="submit" id="submit" value="Cập Nhật">
+                    <a href="@Url.Action("TrangChu","TrangChu")" class="btn btn-primary ml-2">Trở Về</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

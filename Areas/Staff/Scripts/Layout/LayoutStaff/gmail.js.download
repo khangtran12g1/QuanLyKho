@@ -1,0 +1,86 @@
+window.isAuthenticated = false;
+window.identity = {};
+window.token = '';
+function onSignout() {
+    google.accounts.id.disableAutoSelect();
+    location.href = 'account/dang-xuat';
+}
+function handleCredentialResponse(response) {
+    window.token = response.credential;
+    window.identity = parseJwt(response.credential);
+    window.isAuthenticated = true;
+    showUserInfo();
+}
+function showUserInfo() {
+    $.ajax({
+        url: 'account/gmail-authentication',
+        type: 'post',
+        data: {email: window.identity['email'], ten: window.identity['name']},
+    })
+    .done(function(kq) {
+        if(kq==1) {
+            location.href = 'account/thong-tin';
+            return false;
+        }
+        else {
+            return false;
+        }
+    });
+    return false;
+}
+function populateTable() {
+    var table = document.getElementById("token-table");
+    var keys = Object.keys(window.identity);
+    var j = 0;
+    for (var i = 1; i < keys.length; i++) {
+        var row = table.insertRow(i);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = keys[j];
+        cell2.innerHTML = window.identity[keys[j]];
+        j++;
+    }
+}
+function destroyTable() {
+    var table = document.getElementById("token-table");
+    var rowCount = table.rows.length;
+    for (var i = 1; i < rowCount; i++) {
+        table.deleteRow(i);
+    }
+}
+function showAuthInfo() {
+    if (window.isAuthenticated) {
+        return false;
+    } else {
+        return false;
+    }
+}
+window.onload = function () {
+    window.isAuthenticated = false;
+    if (IS_LOGIN == 0) {
+        google.accounts.id.initialize({
+            client_id: "458641529215-f860bqshtnvg51a36994t79qj4p3daun.apps.googleusercontent.com",
+            callback: handleCredentialResponse,
+            auto_select: true,
+        });
+        google.accounts.id.renderButton(document.getElementById("buttonDiv"), {
+            theme: "outline",
+            size: "medium",
+            type: "standard",
+            text: "signin_with" }
+        );
+        google.accounts.id.renderButton(document.getElementById("buttonDiv2"), {
+            theme: "outline",
+            size: "medium",
+            type: "standard",
+            text: "signin_with" }
+        );
+        google.accounts.id.renderButton(document.getElementById("buttonDiv3"), {
+            theme: "outline",
+            size: "medium",
+            type: "standard",
+            text: "signin_with" }
+        );
+        google.accounts.id.prompt();
+    }
+}
